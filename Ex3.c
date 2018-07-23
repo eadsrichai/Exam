@@ -1,3 +1,5 @@
+//Ex3.c
+//Mr.Wuttiwong Eadsrichai
 #include<stdio.h>
 #include<math.h>
 float calPrice(float);
