@@ -13,6 +13,7 @@ int main(){
 	
 	printf("%.2f Bath",calPrice(distance));
 	
+	getch();
 	return 0;
 }
 float calPrice(float dis){

@@ -11,6 +11,7 @@ int main() {
 	sort(number,10);
 	output();
 	
+	getch();
 	return 0;
 }
 void input(){

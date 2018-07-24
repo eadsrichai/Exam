@@ -1,17 +1,18 @@
 #include<stdio.h>
 #include<string.h>
-void sort(char[],int);
+#include"color.h"
+void sort(char[]);
+char msg1[100];
 int main(){
 	char msg[100];
-	char ch, input[100], output[100];
-	int no[26] = {0}, n, c, t, x;
+	
 	
 	printf("Enter message : ");
 	gets(msg);
-	puts(msg);
+
 	int len = strlen(msg);
 	int i = 0;
-	char msg1[100];
+
 	char msg2[100];
 	int k = 0;
 	int j = 0;
@@ -32,39 +33,37 @@ int main(){
 		i++;
 	}
 	
-	puts(msg2);
-	printf("%d",sum);
-
-for (ch = 'a'; ch <= 'z'; ch++)
-   {
-      x = ch - 'a';
- 
-      for (c = 0; c < no[x]; c++)
-      {
-         output[t] = ch;
-         t++;
-      }
-   }
-   output[t] = '\0';
- 
-   printf("%s\n", output);
-   
-   
-   
+	textcolor(COLOR_RED,COLOR_BLACK);
+	puts(msg1);
+	resetcolor();
 	
+	
+	textcolor(COLOR_BLUE,COLOR_BLACK);
+	printf("%d\n",sum);
+	resetcolor();
+	
+	int len1 = strlen(msg1);
+
+	i= 0;
+	char temp;
+	for(j=0; j<len1; j++){
+		for(i=0; i<len1;i++){
+			if(msg1[i] > msg1[i+1]){
+				temp= msg1[i+1];
+				msg1[i+1] = msg1[i];
+				msg1[i] = temp;
+			}
+		//	printf("%c",msg1[i]);
+		}//printf("%c\n",msg1[i]); 
+		//msg1[i+1] = '\0';
+		
+	}
+	puts(msg1);
+
+	
+
+   
+	getch();	
 	return 0;
 }
-void sort(char number[],int n){
-	int j,k;
-	int i = 0;
-	int temp = 0;
-	for(j = 0; j< n; j++){
-		for(k = 0; k < n-j; k++){
-			if(number[k] > number[k+1]){
-			temp = number[k];
-			number[k] = number[k+1];
-			number[k+1] = temp;
-			}
-		}
-	}
-}
+
